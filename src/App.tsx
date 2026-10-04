@@ -1,12 +1,13 @@
 import './App.css'
+import Header from './components/Header'
 import Shows from './components/Shows'
 
 function App() {
   return (
     <>
-      <h1>Neon Empire</h1>
+      <Header />
       <p>Official Neon Empire website</p>
-      <Shows/>
+      <Shows />
     </>
   )
 }
