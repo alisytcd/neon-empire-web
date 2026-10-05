@@ -2,5 +2,23 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 5px 40px;
+}
+
+.heroImage {
+  width: 50%;
+  margin: auto;
+}
+
+#imageHero {
+  width: 100%;
+  display: block;
+}
+
+@media (max-width : 768px) {
+
+  .heroImage {
+    width: 80%;
+  }
+
 }
