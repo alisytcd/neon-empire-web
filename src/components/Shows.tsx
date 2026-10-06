@@ -29,14 +29,18 @@ function Shows() {
 
 
     return (
-        <div>
-            <h2>Upcoming Shows</h2>
-            <div>
+        <div className="shows">
+
+            <h2 className="showsHeading">Upcoming Shows</h2>
+
+            <div className="showsList">
                 {
                     shows.map((show) => {
                         return (
-                            <div key={show.id}>
-                                <p> {show.venue} , {show.city} </p>
+                            <div className="show" key={show.id}>
+                                <p className="showVenue"> {show.venue} </p>
+                                <p className="showCity"> {show.city} </p>
+                                <p className="showDate"> {show.date}</p>
                             </div>
                         )
                     }
