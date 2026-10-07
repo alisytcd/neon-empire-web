@@ -1,20 +1,32 @@
+import bandLogoImage from '../assets/images/NE_Butterfly_Metal.png'
+
 
 function Header() {
 
   return (
     <header className="header">
-      <BandNameAndLogo />
+      <MerchStoreLink />
+      <BandLogo />
       <AdminLink />
     </header>
 
   )
 }
 
-function BandNameAndLogo() {
+function MerchStoreLink() {
 
   return (
-    <div className="nameAndLogo">
-      <p>Neon Empire</p>
+    <div className="merchStoreLink">
+      <a href="#">Merch Store</a>
+    </div>
+  )
+}
+
+function BandLogo() {
+
+  return (
+    <div className="bandLogo">
+      <img src={bandLogoImage} />
     </div>
   )
 }

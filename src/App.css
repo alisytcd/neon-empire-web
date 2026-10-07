@@ -1,8 +1,47 @@
 .header {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   padding: 5px 40px;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background: linear-gradient(90deg,
+      #151126 0%,
+      #201536 50%,
+      #151126 100%);
+
+  border-bottom: 1px solid #4a2557;
+}
+
+.header a {
+  color: #e8e6f0;
+  text-decoration: none;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.header a:hover {
+  color: #d629e3;
+}
+
+.merchStoreLink {
+  justify-self: start;
+}
+
+.bandLogo {
+  justify-self: center;
+}
+
+.bandLogo img {
+  width: 80px;
+}
+
+.navigation {
+  justify-self: end;
 }
 
 .heroImage {
