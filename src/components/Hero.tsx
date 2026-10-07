@@ -1,6 +1,6 @@
-import heroImage from '../assets/EndlessCycleArtwork.jpg'
+import heroImage from '../assets/images/EndlessCycleArtwork.jpg'
 
-function HeroSection() {
+function Hero() {
 
   return (
     <section className="heroImage">
@@ -9,4 +9,4 @@ function HeroSection() {
   )
 }
 
-export default HeroSection
+export default Hero
