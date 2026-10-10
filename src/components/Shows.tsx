@@ -41,6 +41,7 @@ function Shows() {
                                 <p className="showVenue"> {show.venue} </p>
                                 <p className="showCity"> {show.city} </p>
                                 <p className="showDate"> {show.date}</p>
+                                <a className="showTicketLink" href="#">Get Tickets ↗ </a>
                             </div>
                         )
                     }

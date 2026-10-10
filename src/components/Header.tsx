@@ -17,7 +17,7 @@ function MerchStoreLink() {
 
   return (
     <div className="merchStoreLink">
-      <a href="#">Merch Store</a>
+      <a href="#">Merch</a>
     </div>
   )
 }

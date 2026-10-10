@@ -55,19 +55,18 @@
 }
 
 .shows {
-  width: 80%;
+  width: 50%;
   margin: auto;
+  padding-bottom: 40px;
 }
 
 .show {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
   padding: 20px 0px;
 }
 
-.showDate {
-  justify-self: end;
-}
 
 .showsHeading {
   text-align: center;
@@ -75,6 +74,26 @@
 
 .show p {
   margin: 0;
+}
+
+.show a {
+  display: block;
+  width: fit-content;
+  justify-self: end;
+  padding: 8px 10px;
+
+  background-color: #30163e;
+  border: 1px solid #d629e3;
+  border-radius: 6px;
+
+  color: #e8e6f0;
+  font-family: "Space Grotesk", sans-serif;
+
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .show:not(:last-child) {
@@ -88,6 +107,82 @@
   height: 2px;
   background-color: #c026d3;
   margin: 12px auto 0;
+}
+
+.tabButtons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 30px;
+  width: 50%;
+  margin: 25px auto 35px;
+}
+
+.tabButtons button {
+  background-color: #151126;
+  border: 1px solid #60416e;
+  border-radius: 6px;
+  color: #e8e6f0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.tabButtons button:hover {
+  color: #d629e3;
+}
+
+.tabButtons button.active {
+  background-color: #30163e;
+  border-color: #d629e3;
+}
+
+.aboutBand {
+  width: 50%;
+  justify-self: center;
+}
+
+.music {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-bottom: 40px;
+}
+
+.music iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+}
+
+.moreMusicButton {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 12px 24px;
+
+  background-color: #151126;
+  border: 1px solid #60416e;
+  border-radius: 6px;
+
+  color: #e8e6f0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.moreMusicButton:hover {
+  background-color: #30163e;
+  border-color: #d629e3;
 }
 
 .footer {
@@ -114,8 +209,61 @@
 
 @media (max-width : 768px) {
 
+  .bandLogo img {
+    width: 45px;
+  }
+
   .heroImage {
     width: 80%;
+  }
+
+  .tabButtons {
+    width: 90%;
+    gap: 5px;
+  }
+
+  .tabButtons button {
+    font-size: 10px;
+    padding: 10px 5px;
+  }
+
+  .aboutBand {
+    width: 80%;
+    justify-self: center;
+  }
+
+  .music {
+    width: 90%;
+  }
+
+  .shows {
+    width: 90%;
+  }
+
+  .show {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 10px;
+    grid-template-areas:
+      "venue date"
+      "city tickets";
+  }
+
+  .showVenue {
+    grid-area: venue;
+    font-weight: bold;
+  }
+
+  .showDate {
+    grid-area: date;
+    justify-self: end;
+  }
+
+  .showCity {
+    grid-area: city;
+  }
+
+  .showTicketLink {
+    grid-area: tickets;
   }
 
 }
