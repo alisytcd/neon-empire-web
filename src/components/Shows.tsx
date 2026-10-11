@@ -13,7 +13,7 @@ function Shows() {
 
     const [shows, setShows] = useState<Show[]>([])
 
-    const convertToLocalDateString = (date: string) => {
+    const formatShowDate = (date: string) => {
 
         return new Date(date).toLocaleDateString("en-GB", {
             day: "2-digit",
@@ -50,7 +50,7 @@ function Shows() {
                             <div className="show" key={show.id}>
                                 <p className="showVenue"> {show.venue} </p>
                                 <p className="showCity"> {show.city} </p>
-                                <p className="showDate"> {convertToLocalDateString(show.date)}</p>
+                                <p className="showDate"> {formatShowDate(show.date)}</p>
                                 <a className="showTicketLink" href="#">Get Tickets ↗ </a>
                             </div>
                         )

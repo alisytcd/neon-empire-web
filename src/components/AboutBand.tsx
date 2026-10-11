@@ -3,7 +3,7 @@ function AboutBand() {
   return (
     <div className="aboutBand">
       <p>
-        Found in 2019, Neon Empire are a powerful force in the metalcore scene, ready to electrify your senses with their unique blend of heavy riffs and electronic ambiance.
+        Formed in 2019, Neon Empire are a powerful force in the metalcore scene, ready to electrify your senses with their unique blend of heavy riffs and electronic ambiance.
         Hailing from Dublin, Ireland, this dynamic band has proven their mettle by reaching the semi-finals of Metal 2 the Masses 3 times in a row, showcasing their passion and dedication to their craft.
       </p>
 
