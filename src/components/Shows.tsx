@@ -13,6 +13,16 @@ function Shows() {
 
     const [shows, setShows] = useState<Show[]>([])
 
+    const convertToLocalDateString = (date: string) => {
+
+        return new Date(date).toLocaleDateString("en-GB", {
+            day: "2-digit",
+            month: "short",
+            year: "numeric",
+            timeZone: "UTC"
+        })
+    }
+
     useEffect(() => {
 
         async function fetchShows() {
@@ -40,7 +50,7 @@ function Shows() {
                             <div className="show" key={show.id}>
                                 <p className="showVenue"> {show.venue} </p>
                                 <p className="showCity"> {show.city} </p>
-                                <p className="showDate"> {show.date}</p>
+                                <p className="showDate"> {convertToLocalDateString(show.date)}</p>
                                 <a className="showTicketLink" href="#">Get Tickets ↗ </a>
                             </div>
                         )
