@@ -6,8 +6,9 @@ description: Review the current branch against main, draft a PR description, and
 # Open a PR for the current branch
 
 ## 1. Inspect the branch
-- Run `git status --short` and `git log main..HEAD --format='%h %s%n%b'`.
-- Run `git diff main...HEAD --stat` and `git diff main...HEAD`.
+- Run `git fetch origin` so the comparison isn't against a stale local `main`.
+- Run `git status --short` and `git log origin/main..HEAD --format='%h %s%n%b'`.
+- Run `git diff origin/main...HEAD --stat` and `git diff origin/main...HEAD`.
 - If there are uncommitted changes, tell the user; offer to commit them before continuing.
 
 ## 2. Quick review
