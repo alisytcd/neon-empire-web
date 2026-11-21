@@ -4,12 +4,12 @@ type HeaderProps = {
   setLoginFormVisibility: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-type AdminLinkProps = {
-  toggleLoginVisibility: () => void
+type LoginButtonProps = {
+  showLoginForm: () => void
 }
 
 function Header({ setLoginFormVisibility }: HeaderProps) {
-  const toggleLoginVisibility = () => {
+  const showLoginForm = () => {
     setLoginFormVisibility(true)
   }
 
@@ -17,7 +17,7 @@ function Header({ setLoginFormVisibility }: HeaderProps) {
     <header className="header">
       <MerchStoreLink />
       <BandLogo />
-      <AdminLink toggleLoginVisibility={toggleLoginVisibility} />
+      <LoginButton showLoginForm={showLoginForm} />
     </header>
   )
 }
@@ -38,15 +38,15 @@ function BandLogo() {
   )
 }
 
-function AdminLink({ toggleLoginVisibility }: AdminLinkProps) {
+function LoginButton({ showLoginForm }: LoginButtonProps) {
   return (
     <nav className="navigation">
       <button
         onClick={() => {
-          toggleLoginVisibility()
+          showLoginForm()
         }}
       >
-        Admin
+        Login
       </button>
     </nav>
   )
