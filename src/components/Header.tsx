@@ -1,20 +1,28 @@
-import bandLogoImage from '../assets/images/NE_Butterfly_Metal.png'
+import bandLogoImage from "../assets/images/NE_Butterfly_Metal.png"
 
+type HeaderProps = {
+  setLoginFormVisibility: React.Dispatch<React.SetStateAction<boolean>>
+}
 
-function Header() {
+type LoginButtonProps = {
+  showLoginForm: () => void
+}
+
+function Header({ setLoginFormVisibility }: HeaderProps) {
+  const showLoginForm = () => {
+    setLoginFormVisibility(true)
+  }
 
   return (
     <header className="header">
       <MerchStoreLink />
       <BandLogo />
-      <AdminLink />
+      <LoginButton showLoginForm={showLoginForm} />
     </header>
-
   )
 }
 
 function MerchStoreLink() {
-
   return (
     <div className="merchStoreLink">
       <a href="#">Merch</a>
@@ -23,7 +31,6 @@ function MerchStoreLink() {
 }
 
 function BandLogo() {
-
   return (
     <div className="bandLogo">
       <img src={bandLogoImage} />
@@ -31,11 +38,16 @@ function BandLogo() {
   )
 }
 
-function AdminLink() {
-
+function LoginButton({ showLoginForm }: LoginButtonProps) {
   return (
     <nav className="navigation">
-      <a href="#">Admin</a>
+      <button
+        onClick={() => {
+          showLoginForm()
+        }}
+      >
+        Login
+      </button>
     </nav>
   )
 }
