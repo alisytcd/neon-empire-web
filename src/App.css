@@ -267,6 +267,11 @@ dialog::backdrop {
   box-sizing: border-box;
 }
 
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 @media (max-width: 768px) {
   .bandLogo img {
     width: 45px;
