@@ -37,15 +37,18 @@ function LoginForm({ setLoginFormVisibility }: loginFormProps) {
       //which could be a string, file or null. And as the login function expects two strings, we need
       //to narrow the type manually
 
-      if (typeof email === "string" && typeof password === "string") {
-        const loginResponse = await login(email, password)
-        const accessToken = loginResponse.accessToken
-        const tokenType = loginResponse.tokenType
-
-        //do something with accessToken and tokenType
+      //if the types aren't what we expect, present an error and return early
+      if (typeof email !== "string" || typeof password !== "string") {
+        setError("Unable to process login credentials. Please try again.")
+        return
       }
+      const loginResponse = await login(email, password)
+      const accessToken = loginResponse.accessToken
+      const tokenType = loginResponse.tokenType
+
+      //do something with accessToken and tokenType
     } catch (error) {
-      //since we could have errors be simple 401, "something went wrong" , or new Error("something went wrong")
+      //since we could have errors be something went wrong" , or new Error("something went wrong")
       //we want to first check if it's an instance of Error, and extract the error.message for our setter,
       //otherwise we default to setting the error message with a string
       if (error instanceof Error) {
